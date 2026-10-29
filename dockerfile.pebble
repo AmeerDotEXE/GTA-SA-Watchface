@@ -1,0 +1,41 @@
+FROM ubuntu:20.04
+
+# Update the operating system
+# RUN apt update
+# RUN apt upgrade -y
+
+# Install python2
+RUN apt update
+RUN apt install python2 curl wget gcc -y
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+RUN curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+RUN python2 get-pip.py
+RUN python2.7 -m pip install -U pip setuptools wheel virtualenv
+RUN apt install -y python2-dev
+
+# Node.js + npm
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata
+RUN apt install -y libnode-dev npm
+RUN apt install -y libsdl1.2debian libfdt1 libpixman-1-0
+
+# Installing the SDK tools
+
+# Download and extract the SDK
+WORKDIR /pebble-dev
+RUN wget https://rebble-sdk.s3-us-west-2.amazonaws.com/pebble-sdk-4.6-rc2-linux64.tar.bz2
+RUN tar -jxf pebble-sdk-4.6-rc2-linux64.tar.bz2
+WORKDIR /pebble-dev/pebble-sdk-4.6-rc2-linux64
+
+# Installing the python dependencies
+RUN python2 -m pip install virtualenv
+RUN python2 -m virtualenv .env
+RUN . .env/bin/activate && pip install -r requirements.txt && deactivate
+# RUN deactivate
+
+RUN echo 'export PATH=/pebble-dev/pebble-sdk-4.6-rc2-linux64/bin:$PATH' >> ~/.bashrc
+
+# RUN . ~/.bashrc && pebble sdk install latest
+
+WORKDIR /app
+
+CMD [ "/bin/bash", "~/.bashrc" ]

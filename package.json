@@ -1,0 +1,263 @@
+{
+  "name": "gta-sa",
+  "author": "Ameer!",
+  "version": "1.0.0",
+  "keywords": [
+    "pebble-app"
+  ],
+  "private": true,
+  "dependencies": {
+    "pebble-clay": "^1.0.4"
+  },
+  "pebble": {
+    "capabilities": [ "configurable" ],
+    "displayName": "GTA SA",
+    "uuid": "4c51f4b3-658e-478a-b37b-b1de4fe42a03",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "basalt"
+    ],
+    "watchapp": {
+      "watchface": true
+    },
+    "messageKeys": [
+      "HasArmour",
+      "HasBreath",
+      "IsZoomed",
+      "WeekStart"
+    ],
+    "resources": {
+      "media": [
+        {
+          "type": "font",
+          "name": "PRICEDOWN_BL_FONT_30",
+          "file": "pricedown_bl.ttf",
+          "compatibility": "2.7"
+        },
+        {
+          "type": "font",
+          "name": "PRICEDOWN_BL_FONT_38",
+          "file": "pricedown_bl.ttf",
+          "compatibility": "2.7"
+        },
+        {
+          "type": "bitmap",
+          "name": "FIST_64",
+          "file": "images/fist_outline_64.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FIST_42",
+          "file": "images/fist_outline_42.png"
+        },
+		
+        {
+			"type": "bitmap",
+			"name": "WEAPON_AK47",
+			"file": "images/weapons/AK-47-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_BAT",
+			"file": "images/weapons/Bat-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_BRASS_KNUCKLES",
+			"file": "images/weapons/BrassKnuckles-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_CAMERA",
+			"file": "images/weapons/CamaraDeFotosSanAndreasHD.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_CANE",
+			"file": "images/weapons/Cane-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_CELLPHONE",
+			"file": "images/weapons/Cellphone-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_CHAINSAW",
+			"file": "images/weapons/Chainsaw-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_COMBAT_SG",
+			"file": "images/weapons/CombatSG-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_DESERT_EAGLE",
+			"file": "images/weapons/DesertEagle-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_DETONATOR",
+			"file": "images/weapons/Detonator-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_FIRE_EXTINGUISHER",
+			"file": "images/weapons/FireExtinguisher-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_FLAMETHROWER",
+			"file": "images/weapons/Flamethrower-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_FLOWER",
+			"file": "images/weapons/Flower-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_GOLF_CLUB",
+			"file": "images/weapons/GolfClub-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_GRENADE",
+			"file": "images/weapons/Grenade-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_HEAT_SKRL",
+			"file": "images/weapons/HeatSKRL-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_JETPACK",
+			"file": "images/weapons/JetPackHD.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_KATANA",
+			"file": "images/weapons/Katana-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_KNIFE",
+			"file": "images/weapons/Knife-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_M4",
+			"file": "images/weapons/M4-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_MICRO_UZI",
+			"file": "images/weapons/Micro-Uzi-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_MINIGUN",
+			"file": "images/weapons/Minigun-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_MOLOTOV_COCKTAIL",
+			"file": "images/weapons/MolotovCocktail-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_MP5",
+			"file": "images/weapons/MP5-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_NIGHTSTICK",
+			"file": "images/weapons/Nightstick-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_NIGHT_VISION",
+			"file": "images/weapons/NightVision-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_PARACHUTE",
+			"file": "images/weapons/Parachute-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_PISTOL",
+			"file": "images/weapons/Pistol-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_POOLCUE",
+			"file": "images/weapons/Poolcue-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_PUMP_SG",
+			"file": "images/weapons/PumpSG-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_RIFLE",
+			"file": "images/weapons/Rifle-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_ROCKET_LAUNCHER",
+			"file": "images/weapons/RocketLauncher-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_SATCHEL_CHARGES",
+			"file": "images/weapons/satcheliconpng.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_SAWN_OFF_SG",
+			"file": "images/weapons/Sawn-offShotgun-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_SHOVEL",
+			"file": "images/weapons/Shovel-GTASA-icon.PNG.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_SILENCED_9MM",
+			"file": "images/weapons/Silenced9mm-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_SKATEBOARD",
+			"file": "images/weapons/Skateboard-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_SNIPER_RIFLE",
+			"file": "images/weapons/SniperRifle-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_SPRAY_CAN",
+			"file": "images/weapons/SprayCan-GTASA-icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_TEAR_GAS",
+			"file": "images/weapons/TearGas-GTASA-Icon.png"
+		},
+		{
+			"type": "bitmap",
+			"name": "WEAPON_TEC9",
+			"file": "images/weapons/TEC9-GTASA-icon.png"
+		}
+      ]
+    }
+  }
+}
