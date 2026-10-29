@@ -1,3 +1,4 @@
 .lock-waf_linux2_build
 node_modules/
 build/
+private/

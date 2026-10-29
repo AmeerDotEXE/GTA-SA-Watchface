@@ -7,7 +7,7 @@
   ],
   "private": true,
   "dependencies": {
-    "pebble-clay": "^1.0.4"
+      "@rebble/clay": "^1.0.8"
   },
   "pebble": {
     "capabilities": [ "configurable" ],
@@ -15,6 +15,7 @@
     "uuid": "4c51f4b3-658e-478a-b37b-b1de4fe42a03",
     "sdkVersion": "3",
     "enableMultiJS": true,
+    "projectType": "native",
     "targetPlatforms": [
       "basalt"
     ],
@@ -32,13 +33,13 @@
         {
           "type": "font",
           "name": "PRICEDOWN_BL_FONT_30",
-          "file": "pricedown_bl.ttf",
+          "file": "fonts/pricedown_bl.ttf",
           "compatibility": "2.7"
         },
         {
           "type": "font",
           "name": "PRICEDOWN_BL_FONT_38",
-          "file": "pricedown_bl.ttf",
+          "file": "fonts/pricedown_bl.ttf",
           "compatibility": "2.7"
         },
         {
