@@ -26,7 +26,8 @@
       "HasArmour",
       "HasBreath",
       "IsZoomed",
-      "WeekStart"
+      "WeekStart",
+      "VibrateInterval"
     ],
     "resources": {
       "media": [

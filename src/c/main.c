@@ -11,6 +11,7 @@ typedef struct ClaySettings {
 	bool hasBreath;
 	bool isZoomed;
 	int weekStartOffset;
+	int vibrateInterval;
 } ClaySettings;
 
 
@@ -152,6 +153,7 @@ static void default_settings() {
 	settings.hasBreath = true;
 	settings.isZoomed = false;
 	settings.weekStartOffset = 6;
+    settings.vibrateInterval = 0;
 }
 
 // Read settings from persistent storage
@@ -235,6 +237,25 @@ static void update_per_hour() {
 	update_date();
 	update_icon();
 	layer_mark_dirty(star_canvas_layer); //manual update
+}
+
+static void update_vibes() {
+    if (settings.vibrateInterval == 0) return;
+	time_t now = time(NULL);
+    struct tm *tm_now = localtime(&now);
+    int minutes = tm_now->tm_min;
+    
+    if ((minutes % settings.vibrateInterval) != 0) {
+        return;
+    }
+    
+	// vibes_short_pulse();
+    static const uint32_t segments[] = { 200, 100, 400 };
+    VibePattern pat = {
+      .durations = segments,
+      .num_segments = ARRAY_LENGTH(segments),
+    };
+    vibes_enqueue_custom_pattern(pat);
 }
 
 
@@ -438,6 +459,7 @@ static void health_bg_update_proc(Layer *layer, GContext *ctx) {
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
 	update_time();
 	update_per_hour();
+    update_vibes();
 }
 
 static void handle_battery(BatteryChargeState charge_state) {
@@ -602,6 +624,11 @@ static void inbox_received_handler(DictionaryIterator *iter, void *context) {
 	Tuple *week_start_t = dict_find(iter, MESSAGE_KEY_WeekStart);
 	if(week_start_t) {
 		settings.weekStartOffset = week_start_t->value->int32;
+	}
+    
+	Tuple *vibrate_interval_t = dict_find(iter, MESSAGE_KEY_VibrateInterval);
+	if(vibrate_interval_t) {
+		settings.vibrateInterval = vibrate_interval_t->value->int32;
 	}
 
 	save_settings();
